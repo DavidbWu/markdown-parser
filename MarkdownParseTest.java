@@ -16,7 +16,8 @@ public class MarkdownParseTest {
     // either use absolute path or use the commandline command from lab4
     @Test
     public void testGetLinkTry() throws IOException{
-        String a = Files.readString(Path.of("/Users/fanwu/Documents/GitHub/markdown-parser/test-file.md"));
+        String a = Files.readString(Path.of("test-file.md"));
+        // absolute path /Users/fanwu/Documents/GitHub/markdown-parser/
 
         assertEquals(List.of("https://something.com","some-thing.html"), MarkdownParse.getLinks(a));
     }
@@ -24,7 +25,8 @@ public class MarkdownParseTest {
     // either use absolute path or use the commandline command from lab4
     @Test
     public void testTwoGetLinkTry() throws IOException{
-        String a = Files.readString(Path.of("/Users/fanwu/Documents/GitHub/markdown-parser/test-file2.md"));
+        // absolute path /Users/fanwu/Documents/GitHub/markdown-parser/
+        String a = Files.readString(Path.of("test-file2.md"));
  
         assertEquals(List.of("https://google.com","some-thing.html"), MarkdownParse.getLinks(a));
     }
