@@ -1,5 +1,7 @@
 //https://howtodoinjava.com/java/io/java-read-file-to-string-examples/
 
+// “Write a program that takes a markdown file as a command line argument and
+// then prints out all of the URLs of the links (but not of images) in that file.”
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -12,13 +14,20 @@ public class MarkdownParse {
         // find the next [, then find the ], then find the (, then read link upto next )
         int currentIndex = 0;
         while(currentIndex < markdown.length()) {
+            int exclamationMark = markdown.indexOf("!"); //filter png
             int openBracket = markdown.indexOf("[", currentIndex);
             int closeBracket = markdown.indexOf("]", openBracket);
-            //useful fix for infinite loop, why?
             int openParen = markdown.indexOf("(", closeBracket);
             int closeParen = markdown.indexOf(")", openParen);
 
-            if(openBracket == -1 || closeBracket == -1 || openParen == -1 || closeParen == -1){
+            // to filter png
+            if(exclamationMark != -1){
+                break;
+            }
+
+            //useful fix for infinite loop, why?
+            if(openBracket == -1 || closeBracket == -1 
+            || openParen == -1 || closeParen == -1){
                 break;
             }
 
@@ -28,7 +37,6 @@ public class MarkdownParse {
 
 
         }
-
 
         return toReturn;
     }

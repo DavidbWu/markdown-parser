@@ -28,7 +28,15 @@ public class MarkdownParseTest {
         // absolute path /Users/fanwu/Documents/GitHub/markdown-parser/
         String a = Files.readString(Path.of("test-file2.md"));
  
-        assertEquals(List.of("https://google.com","some-thing.html"), MarkdownParse.getLinks(a));
+        assertEquals(List.of(), MarkdownParse.getLinks(a));
     }
 
+    //2022/07/12 cse15l lab5 create 1 fail inducing test
+    @Test
+    public void testThreeGetLinkTry() throws IOException{
+        // absolute path /Users/fanwu/Documents/GitHub/markdown-parser/
+        String a = Files.readString(Path.of("test-file-lab5.md"));
+ 
+        assertEquals(List.of(), MarkdownParse.getLinks(a));
+    }
 }
