@@ -26,7 +26,7 @@ public class MarkdownParseTest {
     public void testTwoGetLinkTry() throws IOException{
         String a = Files.readString(Path.of("/Users/fanwu/Documents/GitHub/markdown-parser/test-file2.md"));
  
-        assertEquals(List.of("https://something.com","some-thing.html"), MarkdownParse.getLinks(a));
+        assertEquals(List.of("https://google.com","some-thing.html"), MarkdownParse.getLinks(a));
     }
 
 }
