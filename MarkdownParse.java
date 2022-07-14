@@ -2,7 +2,7 @@
 
 // “Write a program that takes a markdown file as a command line argument and
 // then prints out all of the URLs of the links (but not of images) in that file.”
-// try git
+// try github
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;

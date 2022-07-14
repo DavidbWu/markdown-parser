@@ -13,7 +13,7 @@ public class MarkdownParseTest {
         assertEquals(2, 1 + 1);
     }
 
-    // either use absolute path or use the commandline command from lab4
+    // either use absolute path or use the commandline command from lab4?
     @Test
     public void testGetLinkTry() throws IOException{
         String a = Files.readString(Path.of("test-file.md"));
